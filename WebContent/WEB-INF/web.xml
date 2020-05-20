@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>jblog</display-name>
+  
+  <servlet>
+  	<servlet-name>FrontController</servlet-name>
+  	<servlet-class>com.bit.controller.FrontController</servlet-class>
+  	<init-param> <!-- 초기값 줄 수 있음. 여러개 가능 -->
+  		<param-name>configName</param-name>
+  		<param-value>/resources/bean.properties</param-value>
+  	</init-param>
+  </servlet>
+  <!-- 
+  		.do로 끝나는 패턴(URL)의 요청을 모두 받겠다.
+   -->
+  <servlet-mapping>
+  	<servlet-name>FrontController</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <welcome-file-list>
+	<welcome-file>/WEB-INF/views/main/index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
